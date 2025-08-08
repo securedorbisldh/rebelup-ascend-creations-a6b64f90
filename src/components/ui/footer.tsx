@@ -9,9 +9,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-brand rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg font-mono">R</span>
-              </div>
+              <img 
+                src="/lovable-uploads/8ae731fd-889d-4926-b7ed-0f06b632699f.png" 
+                alt="RebelUp Logo" 
+                className="w-8 h-8"
+              />
               <span className="text-xl font-bold font-mono">RebelUp</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
