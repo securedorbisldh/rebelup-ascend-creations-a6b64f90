@@ -1,103 +1,72 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const comparisons = [
   {
-    category: "Pricing",
-    competitor: "Competitors charge $773–$3,773/mo",
-    rebelup: "RebelUp starts at $497",
-    highlight: true
+    label: "Pricing",
+    others: "$773–$3,773/mo",
+    rebelup: "$497/mo"
   },
   {
-    category: "Add-ons",
-    competitor: "Competitor add-ons $137–$173 each",
-    rebelup: "RebelUp $97 flat",
-    highlight: true
+    label: "Add-ons",
+    others: "$137–$173 each",
+    rebelup: "$97 flat"
   },
   {
-    category: "Transparency",
-    competitor: "Competitors vague with 'active requests'",
-    rebelup: "RebelUp guarantees daily output",
-    highlight: false
+    label: "Output",
+    others: "Vague 'active requests'",
+    rebelup: "Guaranteed daily"
   },
   {
-    category: "Flexibility",
-    competitor: "Competitors lock you into bloated plans",
-    rebelup: "RebelUp gives lean, scalable options",
-    highlight: false
+    label: "Plans",
+    others: "Bloated, locked-in",
+    rebelup: "Lean & scalable"
   }
 ];
 
 const OurStandard = () => {
   return (
-    <section className="py-24 relative">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-brand rounded-full opacity-10 blur-3xl animate-pulse-glow"></div>
-      </div>
+    <section className="py-32 relative border-t border-border/50">
+      <div className="container mx-auto px-6">
+        <div className="max-w-5xl mx-auto">
+          {/* Section Label */}
+          <div className="flex items-center gap-2 mb-6">
+            <div className="w-2 h-2 bg-primary rounded-full"></div>
+            <span className="text-sm text-muted-foreground uppercase tracking-wider">The Comparison</span>
+          </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-brand bg-clip-text text-transparent">Our Standard</span> vs Competitors
+          {/* Headline */}
+          <h2 className="text-5xl md:text-6xl font-bold mb-20 leading-tight">
+            Our standard
+            <span className="text-primary"> vs competitors</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            See why creators choose RebelUp over expensive alternatives
-          </p>
-        </div>
 
-        <div className="max-w-4xl mx-auto space-y-6">
-          {comparisons.map((comparison, index) => (
-            <Card 
-              key={index}
-              className={`bg-gradient-to-br from-card to-card/50 border-primary/20 transition-all duration-300 ${
-                comparison.highlight ? 'border-primary/40 shadow-brand' : ''
-              }`}
+          {/* Comparison Table */}
+          <div className="space-y-6 mb-16">
+            {comparisons.map((item, index) => (
+              <div 
+                key={index}
+                className="grid md:grid-cols-3 gap-6 p-6 border border-border/50 rounded-lg"
+              >
+                <div className="font-bold text-lg">{item.label}</div>
+                <div className="text-muted-foreground">Others: {item.others}</div>
+                <div className="text-primary font-semibold">RebelUp: {item.rebelup}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="text-center">
+            <Button 
+              size="lg"
+              className="bg-white text-black hover:bg-white/90 rounded-full font-semibold"
+              onClick={() => window.open('https://calendly.com/rebelupteam/30min', '_blank')}
             >
-              <CardContent className="p-6">
-                <div className="grid md:grid-cols-3 gap-6 items-center">
-                  {/* Category */}
-                  <div className="text-center md:text-left">
-                    <h3 className="text-lg font-bold text-primary mb-2">
-                      {comparison.category}
-                    </h3>
-                  </div>
-
-                  {/* Competitor */}
-                  <div className="text-center md:text-left">
-                    <p className="text-sm text-muted-foreground mb-1 font-medium">Others:</p>
-                    <p className="text-sm text-muted-foreground/80">{comparison.competitor}</p>
-                  </div>
-
-                  {/* RebelUp */}
-                  <div className="text-center md:text-right">
-                    <div className="flex items-center justify-center md:justify-end gap-2">
-                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                      <div>
-                        <p className="text-sm font-bold text-primary mb-1">RebelUp:</p>
-                        <p className="text-sm font-medium">{comparison.rebelup}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <Button 
-            size="lg"
-            className="bg-gradient-brand hover:shadow-glow transition-all duration-300 transform hover:scale-105 text-lg px-8 py-6"
-            onClick={() => window.open('https://calendly.com/rebelupteam/30min', '_blank')}
-          >
-            Lock in This Month's Rate
-          </Button>
-          <p className="text-sm text-muted-foreground mt-4">
-            Grandfather pricing promise — your rate stays locked forever
-          </p>
+              Lock in This Month's Rate
+            </Button>
+            <p className="text-sm text-muted-foreground mt-4">
+              Grandfather pricing promise — your rate stays locked forever
+            </p>
+          </div>
         </div>
       </div>
     </section>
