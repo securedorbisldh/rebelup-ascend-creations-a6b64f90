@@ -23,21 +23,23 @@ const Hero = () => {
 
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            Stop Overpaying for Content.
+            <br />
             <span className="bg-gradient-brand bg-clip-text text-transparent animate-gradient">
-              RebelUp Ascend
+              Scale Smarter with RebelUp.
             </span>
           </h1>
 
           {/* Subheadline */}
           <h2 className="text-2xl md:text-3xl text-muted-foreground mb-8 font-mono font-medium">
-            Forget freelancers. Skip the overhead.
+            Why pay $3,773/mo when 
             <br />
-            <span className="text-foreground">Tap into elite creative on autopilot.</span>
+            <span className="text-foreground">RebelUp gives you more at $497?</span>
           </h2>
 
           {/* Description */}
           <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            Skip the sourcing. Skip the stress. Scale with RebelUp.
+            Creators First. Unlimited Edits. Lightning Fast.
           </p>
 
           {/* CTA Buttons */}
@@ -45,14 +47,16 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="bg-gradient-brand hover:shadow-glow transition-all duration-300 transform hover:scale-105 text-lg px-8 py-6"
+              onClick={() => window.open('https://calendly.com/rebelupteam/30min', '_blank')}
             >
-              Get Started Now
+              Book a Free Call
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button 
               variant="outline" 
               size="lg"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8 py-6"
+              onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
             >
               View Portfolio
             </Button>

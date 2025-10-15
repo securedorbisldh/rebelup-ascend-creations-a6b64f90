@@ -49,8 +49,11 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground mb-4">
               Ready to revolutionize your content?
             </p>
-            <Button className="bg-gradient-brand hover:shadow-glow w-full">
-              Schedule Free Call
+            <Button 
+              className="bg-gradient-brand hover:shadow-glow w-full"
+              onClick={() => window.open('https://calendly.com/rebelupteam/30min', '_blank')}
+            >
+              Book Free Call
             </Button>
           </div>
         </div>

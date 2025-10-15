@@ -5,86 +5,126 @@ import { Check, Zap, Crown, Rocket, Bot } from "lucide-react";
 
 const plans = [
   {
-    name: "Monthly Plan",
-    description: "Ideal for creators and startups with light monthly needs — enjoy lightning-fast delivery and unlimited edits at an unbeatable monthly rate.",
-    price: "$373",
+    name: "Starter Unlimited",
+    description: "Perfect for beginners / light content needs with guaranteed daily delivery.",
+    price: "$497",
     period: "/month",
-    billing: "Billed monthly",
+    billing: "Limited-Time Offer",
     icon: Zap,
     popular: false,
+    badge: "🎯 Unlimited Plan",
     features: [
-      "🎬 Unlimited Video Requests",
-      "🔁 Unlimited Revisions", 
-      "👤 Dedicated Project Manager",
-      "🔄 01 Active Request at a Time",
-      "⚡ Lightning-Fast Turnarounds",
-      "🗓️ Monday to Friday Delivery"
+      "1 guaranteed video every 24 hours",
+      "Unlimited requests & revisions",
+      "Dedicated project manager",
+      "Lightning-fast turnarounds",
+      "Perfect for light content needs"
     ],
     addons: [
-      "🖼️ Thumbnail Design — Add-on: $137/mo",
-      "🚀 Publishing Service — Add-on: $137/mo"
+      "Thumbnail Design — $97/mo",
+      "Publishing Service — $97/mo"
     ]
   },
   {
-    name: "6 Months Plan",
-    description: "Designed for creators and teams with daily content demands. Get your own dedicated video editor at a fraction of the cost of hiring in-house.",
-    price: "$1,773",
+    name: "Scale Unlimited",
+    description: "Dedicated Editor + Project Manager for serious content creators.",
+    price: "$1,500",
     period: "/month",
-    billing: "Discounted from $2,238/month",
+    billing: "Limited-Time Offer",
     icon: Crown,
     popular: true,
+    badge: "🎯 Unlimited Plan",
     features: [
-      "🎬 Unlimited Video Requests",
-      "🔁 Unlimited Revisions",
-      "👤 Direct 1-on-1 contact with the co-founders for reports",
-      "🧑‍💻 01 Dedicated Video Editor", 
-      "⚡ Lightning-Fast Turnarounds",
-      "🗓️ Monday–Sunday Delivery (FULL WEEK)"
+      "Dedicated Editor + Project Manager",
+      "5 active requests daily",
+      "Unlimited revisions",
+      "Priority handling & faster turnaround",
+      "Direct 1-on-1 access"
     ],
     addons: [
-      "🖼️ Thumbnail Design — Add-on: $173/mo",
-      "🚀 Publishing Service — Add-on: $173/mo"
+      "Thumbnail Design — $97/mo",
+      "Publishing Service — $97/mo"
     ]
   },
   {
-    name: "Yearly Plan",
-    description: "Lock in long-term savings with premium support and maximum value over time.",
-    price: "Custom",
-    period: "",
-    billing: "Best Value - Contact us",
+    name: "Scale",
+    description: "30 shorts per month for consistent content flow.",
+    price: "$1,000",
+    period: "/month",
+    billing: "Standard Package",
     icon: Rocket,
     popular: false,
+    badge: "📈 Standard Package",
     features: [
-      "🎬 Unlimited Video Requests",
-      "🔁 Unlimited Revisions",
-      "👤 Direct 1-on-1 contact with the co-founders for reports",
-      "🧑‍💻 01 Dedicated Video Editor",
-      "⚡ Lightning-Fast Turnarounds", 
-      "🗓️ Monday–Sunday Delivery"
+      "30 short-form videos per month",
+      "Unlimited revisions",
+      "Dedicated project manager",
+      "Priority support",
+      "Fast turnaround times"
     ],
     addons: [
-      "🖼️ Thumbnail Design — Add-on: $173/mo",
-      "🚀 Publishing Service — Add-on: $173/mo"
+      "Thumbnail Design — $97/mo",
+      "Publishing Service — $97/mo"
+    ]
+  },
+  {
+    name: "Rise",
+    description: "60 shorts per month for growing channels.",
+    price: "$1,700",
+    period: "/month",
+    billing: "Standard Package",
+    icon: Rocket,
+    popular: false,
+    badge: "📈 Standard Package",
+    features: [
+      "60 short-form videos per month",
+      "Unlimited revisions",
+      "Dedicated editor & project manager",
+      "Priority support",
+      "Faster turnaround times"
+    ],
+    addons: [
+      "Thumbnail Design — $97/mo",
+      "Publishing Service — $97/mo"
+    ]
+  },
+  {
+    name: "Dominate",
+    description: "100 shorts per month for maximum content output.",
+    price: "$2,800",
+    period: "/month",
+    billing: "Standard Package",
+    icon: Crown,
+    popular: false,
+    badge: "📈 Standard Package",
+    features: [
+      "100 short-form videos per month",
+      "Unlimited revisions",
+      "Dedicated video team",
+      "VIP priority support",
+      "Fastest turnaround times"
+    ],
+    addons: [
+      "Thumbnail Design — $97/mo",
+      "Publishing Service — $97/mo"
     ]
   },
   {
     name: "AI Lab",
     description: "The future of content creation with AI-powered video production and strategic automation.",
-    price: "$2,500",
+    price: "$2,997",
     period: "/month",
     billing: "Premium AI Solution",
     icon: Bot,
     popular: false,
+    badge: "🤖 AI Powered",
     features: [
-      "🤖 Unlimited AI Video Requests",
-      "🔁 Unlimited Revisions",
-      "👤 Dedicated Project Manager",
-      "🧑‍💻 01 Dedicated Video Editor",
-      "⚡ Lightning Fast Delivery",
-      "🗓️ Monday to Friday Workday",
-      "🎯 AI Content Strategy & Automation",
-      "🖼️ Thumbnail Design",
-      "🚀 Publishing Service"
+      "Unlimited AI video requests + revisions",
+      "Dedicated Project Manager + Editor",
+      "AI-driven content strategy & automation",
+      "Thumbnail design included ($194 value)",
+      "Publishing service included",
+      "Monday to Friday workday"
     ],
     addons: []
   }
@@ -123,6 +163,11 @@ const Pricing = () => {
               {plan.popular && (
                 <Badge className="absolute top-4 right-4 bg-gradient-brand text-white">
                   Most Popular
+                </Badge>
+              )}
+              {plan.badge && !plan.popular && (
+                <Badge className="absolute top-4 right-4 bg-card border-primary/40">
+                  {plan.badge}
                 </Badge>
               )}
 
@@ -179,8 +224,9 @@ const Pricing = () => {
                       : "bg-secondary hover:bg-primary hover:text-primary-foreground"
                   }`}
                   size="lg"
+                  onClick={() => window.open('https://calendly.com/rebelupteam/30min', '_blank')}
                 >
-                  {plan.price === "Custom" ? "Contact Us" : "Subscribe Now"}
+                  Get Started
                 </Button>
               </CardContent>
             </Card>
@@ -192,8 +238,13 @@ const Pricing = () => {
           <p className="text-muted-foreground mb-6">
             Not sure which plan is right for you?
           </p>
-          <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-            Schedule a Free Consultation
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+            onClick={() => window.open('https://calendly.com/rebelupteam/30min', '_blank')}
+          >
+            Book a Free Call
           </Button>
         </div>
       </div>

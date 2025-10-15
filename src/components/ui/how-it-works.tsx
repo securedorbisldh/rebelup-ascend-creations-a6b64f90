@@ -4,23 +4,37 @@ import { CheckCircle, Upload, Sparkles } from "lucide-react";
 const steps = [
   {
     id: "01",
-    title: "Choose Your Plan",
-    description: "Pick the perfect subscription for your creative needs.",
-    details: "You'll get instant access to your personalized dashboard — your command center for limitless design and video.",
-    icon: CheckCircle,
-  },
-  {
-    id: "02", 
-    title: "Submit Unlimited Requests",
-    description: "Easily upload your assets and brief.",
-    details: "Prioritize what matters most — we'll work on one project at a time, with laser focus and unmatched speed.",
+    title: "Submit Your Video Request",
+    description: "Upload raw footage or share your idea.",
+    details: "Provide your brief and assets through our streamlined dashboard.",
     icon: Upload,
   },
   {
+    id: "02", 
+    title: "Editor Creates & Delivers",
+    description: "RebelUp editor creates within 24 hours.",
+    details: "Our dedicated team works with laser focus to bring your vision to life.",
+    icon: Sparkles,
+  },
+  {
     id: "03",
-    title: "Perfect Every Pixel", 
-    description: "Review, refine, and revise until it's flawless.",
-    details: "Only once you're 100% satisfied, we move on to the next masterpiece.",
+    title: "Request Unlimited Revisions", 
+    description: "Refine until you're 100% satisfied.",
+    details: "We iterate until it's perfect — no limits, no extra charges.",
+    icon: CheckCircle,
+  },
+  {
+    id: "04",
+    title: "Approve & Move Forward",
+    description: "Once approved, we start the next video.",
+    details: "Seamless workflow that keeps your content pipeline flowing.",
+    icon: CheckCircle,
+  },
+  {
+    id: "05",
+    title: "Repeat = Consistent Growth",
+    description: "Scale your content with zero hassle.",
+    details: "Maintain momentum and watch your channel grow with reliable, high-quality content.",
     icon: Sparkles,
   },
 ];
@@ -46,7 +60,7 @@ const HowItWorks = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-5 gap-6 max-w-7xl mx-auto">
           {steps.map((step, index) => (
             <Card 
               key={step.id} 

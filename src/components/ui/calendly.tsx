@@ -43,60 +43,20 @@ const CalendlySection = () => {
                 </div>
               </div>
 
-              {/* Calendly Integration Placeholder */}
-              <div className="bg-background/50 rounded-lg p-8 mb-8 border border-border">
-                <div className="text-center">
-                  <h3 className="text-lg font-bold mb-4">Book Your Free Strategy Call</h3>
-                  <p className="text-muted-foreground mb-6">
-                    Choose a time that works best for you. No commitment required.
-                  </p>
-                  
-                  {/* Calendar Grid Mockup */}
-                  <div className="grid grid-cols-7 gap-2 max-w-xs mx-auto mb-6">
-                    {/* Days of week */}
-                    {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day, idx) => (
-                      <div key={idx} className="text-xs text-muted-foreground p-2 font-mono">
-                        {day}
-                      </div>
-                    ))}
-                    
-                    {/* Calendar dates */}
-                    {Array.from({ length: 21 }, (_, i) => (
-                      <div 
-                        key={i} 
-                        className={`p-2 text-sm rounded cursor-pointer transition-colors ${
-                          i === 10 || i === 12 || i === 15 
-                            ? 'bg-primary text-primary-foreground hover:bg-primary/80' 
-                            : 'text-muted-foreground hover:bg-muted'
-                        }`}
-                      >
-                        {i + 1}
-                      </div>
-                    ))}
-                  </div>
-                  
-                  {/* Time Slots */}
-                  <div className="flex flex-wrap gap-2 justify-center mb-6">
-                    {['9:00 AM', '11:00 AM', '2:00 PM', '4:00 PM'].map((time) => (
-                      <Button 
-                        key={time} 
-                        variant="outline" 
-                        size="sm" 
-                        className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                      >
-                        {time}
-                      </Button>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              {/* Calendly Widget */}
+              <div 
+                className="calendly-inline-widget bg-background/50 rounded-lg overflow-hidden border border-border" 
+                data-url="https://calendly.com/rebelupteam/30min?hide_gdpr_banner=1&primary_color=ef4444"
+                style={{ minWidth: '320px', height: '700px' }}
+              ></div>
 
               {/* Main CTA */}
               <Button 
                 size="lg" 
-                className="bg-gradient-brand hover:shadow-glow transition-all duration-300 transform hover:scale-105 text-lg px-8 py-6"
+                className="bg-gradient-brand hover:shadow-glow transition-all duration-300 transform hover:scale-105 text-lg px-8 py-6 mt-8"
+                onClick={() => window.open('https://calendly.com/rebelupteam/30min', '_blank')}
               >
-                Schedule Your FREE Audit Call Today
+                Book Your Free Call Now
               </Button>
 
               <p className="text-sm text-muted-foreground mt-4">
