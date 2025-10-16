@@ -80,18 +80,18 @@ const plans = [
 const Pricing = () => {
   return (
     <section id="pricing" className="py-32 relative border-t border-border/50">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 max-w-7xl">
         <div className="max-w-6xl mx-auto">
           {/* Section Label */}
-          <div className="flex items-center gap-2 mb-6">
+          <div className="flex items-center gap-2 mb-8">
             <div className="w-2 h-2 bg-primary rounded-full"></div>
             <span className="text-sm text-muted-foreground uppercase tracking-wider">Pricing</span>
           </div>
 
           {/* Headline */}
-          <h2 className="text-5xl md:text-6xl font-bold mb-20 leading-tight">
-            Choose your
-            <span className="text-primary"> creative plan</span>
+          <h2 className="text-5xl md:text-6xl font-bold mb-24 leading-[1.1] max-w-3xl">
+            Plans that scale
+            <span className="text-primary"> with you</span>
           </h2>
 
           {/* Pricing Grid */}

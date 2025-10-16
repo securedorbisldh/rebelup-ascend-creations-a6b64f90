@@ -3,14 +3,14 @@ import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Dot Pattern Background */}
       <div className="absolute inset-0 bg-dot-pattern opacity-50"></div>
       
-      <div className="container mx-auto px-6 relative z-10 py-20">
+      <div className="container mx-auto px-6 relative z-10 max-w-7xl">
         <div className="max-w-5xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-8">
+          <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-10">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
             <span className="text-sm font-medium">Stop Overpaying for Content</span>
           </div>
@@ -34,7 +34,7 @@ const Hero = () => {
           {/* CTA Button */}
           <Button 
             size="lg" 
-            className="bg-white text-black hover:bg-white/90 text-lg px-10 py-7 rounded-full font-semibold group"
+            className="bg-white text-black hover:bg-white/90 text-base px-8 py-6 rounded-full font-semibold group"
             onClick={() => window.open('https://calendly.com/rebelupteam/30min', '_blank')}
           >
             Book a Free Call
@@ -42,23 +42,23 @@ const Hero = () => {
           </Button>
 
           {/* Stats */}
-          <div className="flex flex-wrap gap-12 mt-20 pt-12 border-t border-border/50">
+          <div className="flex flex-wrap gap-12 mt-24 pt-12 border-t border-border/50">
             <div>
-              <div className="flex items-center gap-2 mb-1">
+              <div className="flex items-center gap-2 mb-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 <div className="text-3xl font-bold">8+ Figures</div>
               </div>
               <div className="text-sm text-muted-foreground">Generated Total</div>
             </div>
             <div>
-              <div className="flex items-center gap-2 mb-1">
+              <div className="flex items-center gap-2 mb-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 <div className="text-3xl font-bold">24h</div>
               </div>
               <div className="text-sm text-muted-foreground">Turnaround Time</div>
             </div>
             <div>
-              <div className="flex items-center gap-2 mb-1">
+              <div className="flex items-center gap-2 mb-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 <div className="text-3xl font-bold">100%</div>
               </div>
